@@ -1,0 +1,92 @@
+/*
+YUI 3.18.1 (build f7e7bcb)
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+html{color:#000;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+/*base*/
+html {
+	overflow-y: scroll;
+	background: #fff;
+	height: 100%;
+}
+body {
+	font-family: arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+	font-size: 16px;
+	color: #555;
+	position: relative;
+	height: 100%;
+}
+img {
+	vertical-align: middle;
+}
+a {
+	text-decoration: none;
+}
+input{
+	-webkit-border-radius:0px;
+	-webkit-appearance:none;
+	appearance:none;
+	outline: none;
+}
+.hide {
+	display: none !important;
+}
+.show {
+	display: block !important;
+}
+.bg-blue {
+	background-color: #1da7c3;
+}
+.imgwidthfull {
+	width: 100%;
+}
+
+/* page */
+.wrap {
+	padding: 20px;
+	min-height: 100%;
+}
+.bg-blue {
+	background-color: #1da7c3;
+}
+.ab-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100px;
+	margin-left: -50px;
+	height: 50px;
+	margin-top: -25px;
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+}
+.music {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  z-index: 1000;
+  right: 0;
+  top: 6px;
+  color: rgba(255,255,255,.9);
+  font-size: 12px;
+  text-align: center;
+}
+.music .btn {
+  vertical-align: -5px;
+  width: 19px;
+  height: 19px;
+  background-size: contain;
+  background-image: url(../img/music_close.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  line-height: 19px;
+}
+.music .btn.play {
+  background-image: url(../img/music_open.png);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title>音频 轻触播放</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="./css/app.css"/>
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="wrap bg-blue">
+    <div class="ab-center">轻触播放</div>
+    <div id="music" class="music">
+      <span id="music-btn" class="btn"></span>
+    </div>
+  </div>
+  <script src="./js/zepto.min.js"></script>
+  <script>
+    $('.wrap').after('<audio id="bgsound" loop="loop" style="height: 0;width: 0;opacity: 0;"><source src="http://77g4l9.com5.z0.glb.qiniucdn.com/caihongshetuansome_dreams.mp3" type="audio/mpeg"></source></audio>');
+    
+    var audiotag = document.getElementById('bgsound');
+    $('#music').on('click', function() {
+      $btn = $(this).find('.btn')
+      if($btn.hasClass('play')) {
+        $btn.removeClass('play');
+        audiotag.pause();
+      } else {
+        $btn.addClass('play');
+        audiotag.play();
+      }
+    });
+    function bgsound() {
+      audiotag.oncanplay = playmusic();
+      function playmusic(){
+        $(document).on('touchstart',function(){
+          //audiotag.play();
+          $('#music').click();
+        });
+      };
+    }
+    bgsound();
+  </script>
+</body>
+</html>

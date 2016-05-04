@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./js/videojs-contrib-hls/video-js.css">
+<body>
+	<video id="example-video" width="600" height="300" class="video-js vjs-default-skin vjs-big-play-centered" controls
+	poster="" data-setup='{}'>
+	  <source
+	     src="http://pdres.lekan.com/video_test/134977E9/134977E9-cn-900k.m3u8"
+	     type="application/x-mpegURL"><!-- http://vod1.lekan.com/201605041409/74cc8a8ccce019dcc5a672f1c7609f7e/video1/550/50/134550E1/cn/video.ssm/video-750k.m3u8 -->
+	</video> 
+<script src="./js/videojs-contrib-hls/video.js"></script>
+<script src="./js/videojs-contrib-hls/videojs-contrib-hls.js"></script>
+<script>
+var player = videojs('example-video');
+</script>
+</body>
+</html>

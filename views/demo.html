@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title>音频、视频 demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="./css/app.css"/>
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- 微信分享 -->
+    <div id="wx_pic" style="margin:0 auto;display:none;">
+        <img id="" src="./img/me.jpg" />
+    </div>
+</head>
+<body>
+  <div class="wrap">
+    <h2>音频</h2>
+    <blockquote>
+      <p>不少场景都希望打开页面后，直接播放音乐，但是在<mark>IOS下是不好使的</mark>，必须要用户触发才行(trigger不好使)，所以设置了touchstart事件，绑定了audio.play</p>
+      <footer>PS:仅测试mp3</footer>
+    </blockquote>
+    <ol>
+      <li>
+        <a href="?action=audio_play">直接播放</a>
+      </li>
+      <li>
+        <a href="?action=audio_touch">轻触屏幕后播放</a>
+      </li>
+    </ol>
+    <h2>视频</h2>
+    <ol>
+      <li>
+        <a href="?action=video">视频</a>
+      </li>
+    </ol>
+  </div>
+  <script src="./js/zepto.min.js"></script>
+</body>
+</html>
