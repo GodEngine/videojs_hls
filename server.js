@@ -37,6 +37,9 @@ router.get('/demo', function *(next) {
     case 'videojs':                                             //video.js+videojs-contrib-hls.js库加载流媒体文件
     yield send(this, __dirname + '/views/test_videojs.html');
     break;
+    case 'icon':                                             //video.js+videojs-contrib-hls.js库加载流媒体文件
+    yield send(this, __dirname + '/views/videojs_skin_icon.html');
+    break;
     default:
     	yield send(this, __dirname + '/views/demo.html');
   }
