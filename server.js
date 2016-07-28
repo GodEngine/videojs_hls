@@ -34,10 +34,10 @@ router.get('/demo', function *(next) {
     case 'hls':                                                //hls.js库加载流媒体文件
     yield send(this,__dirname+ '/views/test_hls.html');
     break;                          
-    case 'videojs':                                             //video.js+videojs-contrib-hls.js库加载流媒体文件
-    yield send(this, __dirname + '/views/test_videojs.html');
+    case 'videojs':                                            //video.js+videojs-contrib-hls.js库加载流媒体文件并加载广告
+    yield send(this, __dirname + '/views/videoHls_ad.html');
     break;
-    case 'icon':                                             //video.js+videojs-contrib-hls.js库加载流媒体文件
+    case 'icon':                                               //video.js中的icon图标
     yield send(this, __dirname + '/views/videojs_skin_icon.html');
     break;
     default:

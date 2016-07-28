@@ -1,13 +1,17 @@
 
-## video.js文档笔记
+## video.js文档笔记(videojs)
 
 ### 坑
 
-- 提示跨域问题找后台，nigix可以设置。。。
+- 二话不说先把版本弄到最新的，有时候解决问题就是这么简单...
+
+- 提示跨域问题找后台，nigix可以设置。。。[stackOverFlow](http://stackoverflow.com/questions/10636611/how-does-access-control-allow-origin-header-work)
 
 - 如果video加载后的回调funciton没有起作用，请检查id和function中间的那个{}有没有。。。
 
-- video 标签在没有poster属性的情况下，疯狗般不停的循环发送请求，请在标签里写个poster属性，哪怕为空在后面初始化时在指定poster。。。
+- video 标签在没有poster属性的情况下，不知道为何疯狗般不停的循环发送请求，在标签里写个poster属性就他么好了，哪怕为空在后面初始化时在指定poster。。。
+
+- [html5兼容插件](https://github.com/etianen/html5media)
 
 ### 初始化
 
@@ -47,14 +51,22 @@
 	    muteToggle: false
 	  }
 	});
+- window.HELP_IMPROVE_VIDEOJS = false; 禁止默认的GA统计
 
-### videojs API
-
-#### 皮肤设置
+### 皮肤设置
 - 屏蔽video默认皮肤，在videojs加载前设置 window.VIDEOJS_NO_BASE_THEME = true 
 - 屏蔽videojs的动态皮肤，在videojs加载前设置window.VIDEOJS_NO_DYNAMIC_STYLE  设置后的尺寸会被置0
 
-## hls.js文档笔记
+## 插件机制
+1. 声明插件函数 function Fun(option){}
+2. 注册为一个插件 videojs.plugin('Fun',Fun)
+3. 使用插件:
+	动态创建的video在初始化videojs时调用插件，即videojs('id',{plugins:{Fun:option}})
+	非动态创建的video初始化了的videojs对象可以直接调用，即videojs.Fun(option)
 
-持续更新中。。。
+具体插件(广告插件)的使用参考videoHls_ad.html
 
+### 插入广告流程(videoHls_ad.html)
+- 参考videoHls_ad.html，可以将exampleAds提取出单独的插件文件
+- 在videoHls_ad.html中有较为详细的注意事项以及部分注释
+- 请在试验中将视频及广告的url换为自己的url，并确认服务端的跨域问题
