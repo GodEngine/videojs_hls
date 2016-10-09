@@ -58,6 +58,7 @@
 ### 皮肤设置
 - 屏蔽video默认皮肤，在videojs加载前设置 window.VIDEOJS_NO_BASE_THEME = true 
 - 屏蔽videojs的动态皮肤，在videojs加载前设置window.VIDEOJS_NO_DYNAMIC_STYLE  设置后的尺寸会被置0
+- class中添加vjs-big-play-centered使出现居中的暂停播放按钮，前提是你的controls事开启的，否则无法播放
 
 ## 插件机制
 1. 声明插件函数 function Fun(option){}
