@@ -54,7 +54,11 @@
 - window.HELP_IMPROVE_VIDEOJS = false; 禁止默认的GA统计
 
 - 屏蔽在全屏播放
+
+```javascript
 <video playsinline x5-playsinline webkit-playsinline  x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation/>
+```
+
 ### 皮肤设置
 - 屏蔽video默认皮肤，在videojs加载前设置 window.VIDEOJS_NO_BASE_THEME = true 
 - 屏蔽videojs的动态皮肤，在videojs加载前设置window.VIDEOJS_NO_DYNAMIC_STYLE  设置后的尺寸会被置0
