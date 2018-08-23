@@ -77,3 +77,37 @@
 - 参考videoHls_ad.html，可以将exampleAds提取出单独的插件文件
 - 在videoHls_ad.html中有较为详细的注意事项以及部分注释
 - 请在试验中将视频及广告的url换为自己的url，并确认服务端的跨域问题
+
+### 移动端安卓、ios监听全屏事件
+android 触发全屏的方法为video.webkitRequestFullScreen()，可监听document的全屏更新事件webkitfullscreenchange，根据document.webkitIsFullScreen可判断是否在全屏状态，
+
+ios 触发video元素的全屏事件为videoElement.webkitEnterFullscreen(), 可监听video的webkitbeginfullscreen进入全屏事件，以及video的webkitendfullscreen退出全屏事件
+
+```javascript
+// android 监听全屏状态
+$(document).on('webkitfullscreenchange', function(event) {	// 全屏状态改变
+    if(document.webkitIsFullScreen) {	// 进入全屏状态
+        video.play();
+    } else {							// 退出全屏状态
+        video.pause();
+    }
+ });
+
+ // ios 监听全屏状态
+ $(video).on('webkitbeginfullscreen', function() {	// 进入全屏状态
+     ...
+ }).on('webkitendfullscreen', function() {			// 退出全屏状态
+     ...
+ });
+
+
+ // android触发全屏
+ if (typeof video.webkitRequestFullScreen === 'function') {
+   video.webkitRequestFullScreen();
+ } 
+
+ // ios触发全屏
+ if(typeof videoElement.webkitEnterFullscreen === 'function') {
+     videoElement.webkitEnterFullscreen();
+ }
+```
